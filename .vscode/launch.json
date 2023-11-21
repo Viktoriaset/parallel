@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "MPI Run",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/Laba-10/Variant12.cpp",
+            "args": []
+        }
+    ]
+}

@@ -1,0 +1,3 @@
+﻿  OMP_Task-8.cpp
+C:\parallel\OMP_Task-8\OMP_Task-8.cpp(70,21): warning C4849: Предложение "collapse" OpenMP игнорируется в директиве "for".
+  OMP_Task-8.vcxproj -> C:\parallel\OMP_Task-8\x64\Debug\OMP_Task-8.exe

@@ -1,0 +1,3 @@
+﻿  Source.cpp
+C:\parallel\First\Source.cpp(6,5): warning C4101: k: неиспользованная локальная переменная
+  First.vcxproj -> C:\parallel\First\x64\Debug\First.exe
