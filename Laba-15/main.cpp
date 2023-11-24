@@ -53,10 +53,12 @@ int* CascadeSum(int qProcess, int rank, int deep, int *arr, int arrLen)
 int main(int argc, char **argv)
 {
     int rank, quntityProcess, massLen;
+    double start_time, end_time, cascade_sum_time, reduce_sum_time;
 
     massLen = 1000000;
 
     int *mass = (int *)malloc(massLen * sizeof(int));
+    int *result_reduce = (int *)malloc(massLen * sizeof(int));
 
     fillMassIdentity(mass, massLen);
 
@@ -65,14 +67,21 @@ int main(int argc, char **argv)
     MPI_Comm_size(MPI_COMM_WORLD, &quntityProcess);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
+    start_time = MPI_Wtime();
+    MPI_Reduce(mass, result_reduce, massLen, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+    end_time = MPI_Wtime();
+    reduce_sum_time = end_time - start_time;
+
+    start_time = MPI_Wtime();
     int* result = CascadeSum(quntityProcess, rank, 1, mass, massLen);
+    end_time = MPI_Wtime();
+    cascade_sum_time = end_time - start_time;
+
+    
 
     if (rank == 0)
     {
-        for (int i = 0; i < 5; i++)
-        {
-            cout << result[i] << endl;
-        }
+        cout << "cascade time = " << cascade_sum_time << " reduce time = " << reduce_sum_time;
     }
 
     MPI_Finalize();
