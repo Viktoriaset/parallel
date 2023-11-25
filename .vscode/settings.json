@@ -1,6 +1,7 @@
 {
     "cmake.sourceDirectory": "C:/parallel/vcpkg/ports/7zip",
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
