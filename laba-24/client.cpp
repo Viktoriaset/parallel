@@ -24,7 +24,7 @@ int main(int argc, char **argv)
     cout << "rank = " << rank << endl;
 
     MPI_Send(&rank, 1, MPI_INT, 0, 1, intercomm);
-    cout << "Клент отправил значение " << message_for_server << endl;
+    cout << "Клиент отправил значение " << message_for_server << endl;
 
     MPI_Recv(&message_from_server, 1, MPI_INT, 0, 0, intercomm, &status);
     cout << "Клиент получил занчение " << message_from_server << endl;
